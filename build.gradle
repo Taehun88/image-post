@@ -32,6 +32,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
+    testRuntimeOnly 'com.h2database:h2'
+
     // AWS S3 (v3)
     implementation 'io.awspring.cloud:spring-cloud-aws-starter-s3'
 
