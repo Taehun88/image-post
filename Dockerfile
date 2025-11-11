@@ -26,6 +26,8 @@ RUN ./gradlew dependencies
 # BE 소스 복사
 COPY src ./src
 
+ENV spring_profiles_active=dev
+
 # (★) Stage 1(FE)의 빌드 결과물을 BE의 정적 리소스 경로로 복사
 COPY --from=builder-fe /app-fe/build ./src/main/resources/static/app
 
