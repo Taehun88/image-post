@@ -16,4 +16,4 @@ jobs:
       - name: Test AWS CLI
         run: |
           aws sts get-caller-identity
-          aws ecr describe-repositories --repository-names sb06/image-post
+          aws ecr describe-repositories --repository-names taeheon/image-post
