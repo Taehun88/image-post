@@ -25,9 +25,9 @@ jobs:
         run: ./gradlew test
 
       - name: Docker Build
-        run: docker build -t image-post:latest .
+        run: docker buildx build --platform linux/amd64,linux/arm64 -t image-post:latest .
 
-      - name: Set enviorment variable for tagging
+      - name: Set environment variable for tagging
         run: |
           echo "ECR_REGISTRY=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com" >> $GITHUB_ENV
           echo "ECR_REPOSITORY=taeheon/image-post" >> $GITHUB_ENV
